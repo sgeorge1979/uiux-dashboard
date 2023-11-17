@@ -18,20 +18,28 @@ function importView(...args) {
 
 export const mainRoutes = [
   {
-    path: `/dashboard`,
-    component: lazy(() => importView(["Dashboard", 2])),
+    path: `/home`,
+    component: lazy(() => importView(["Home", 2])),
   },
   {
-    path: `/posts`,
-    component: lazy(() => importView("Posts", "routes")),
+    path: `/liveEditor`,
+    component: lazy(() => importView(["LiveEditor", 2])),
+  },
+  {
+    path: `/dataTable`,
+    component: lazy(() => importView("DataTable", "routes")),
     routes: [
       {
-        path: `/posts/all`,
-        component: lazy(() => importView("Posts", "Posts")),
+        path: `/dataTable/filters`,
+        component: lazy(() => importView("DataTable", "Filters")),
       },
       {
-        path: `/posts/editor`,
-        component: lazy(() => importView("Posts", "Editor")),
+        path: `/dataTable/excel`,
+        component: lazy(() => importView("DataTable", "ExcelDownload")),
+      },
+      {
+        path: `/dataTable/csv`,
+        component: lazy(() => importView("DataTable", "CsvDownload")),
       },
     ],
   },

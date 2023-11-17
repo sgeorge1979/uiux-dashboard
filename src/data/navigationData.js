@@ -1,5 +1,7 @@
 import {
-  Dashboard,
+  Home,
+  Tune,
+  BorderColor,
   PeopleAlt,
   MenuBook,
   ImportContacts,
@@ -8,24 +10,34 @@ import {
 
 export const mainNavigation = [
   {
-    name: "Dashboard",
-    icon: Dashboard,
-    url: `/dashboard`,
+    name: "Home",
+    icon: Home,
+    url: `/home`,
   },
   {
-    name: "Posts",
+    name: "LiveEditor",
+    icon: BorderColor,
+    url: `/liveEditor`,
+  },
+  {
+    name: "Data Table",
     icon: ImportContacts,
-    url: `/posts`,
+    url: `/dataTable`,
     navigationData: [
       {
-        name: "All Posts",
-        icon: MenuBook,
-        url: `/posts/all`,
+        name: "Filters",
+        icon: Tune,
+        url: `/dataTable/filters`,
       },
       {
-        name: "Editor",
+        name: "Excel Download",
+        icon: MenuBook,
+        url: `/dataTable/excel`,
+      },
+      {
+        name: "Csv Download",
         icon: PostAdd,
-        url: `/posts/editor`,
+        url: `/dataTable/csv`,
       },
     ],
   },

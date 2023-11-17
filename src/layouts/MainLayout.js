@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import clsx from "clsx";
 import PropTypes from "prop-types";
+
 import {
   AppBar,
   CssBaseline,
@@ -23,7 +24,8 @@ import { useHistory } from "react-router";
 
 import { Navigation } from "../components";
 import { Favorite } from "@material-ui/icons";
-
+import Avatar from '@mui/material/Avatar';
+import avatarIcon from '../static/dev.jpg'
 const drawerWidth = 210;
 
 const useStyles = makeStyles((theme) => ({
@@ -178,6 +180,9 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
   const drawer = (
     <Fragment>
       <div className={classes.toolbarIcon}>
+      <Avatar alt="Sudhakar George" src="../static/dev.jpg" /> 
+      <Avatar alt="Remy Sharp" src={avatarIcon} id="avatar" className={classes.avatar}  />
+       <h8>Sudhakar George</h8>
         <IconButton
           onClick={handleExtendClose}
           className={classes.collapseButton}>
@@ -190,13 +195,13 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
       <Toolbar className={classes.drawerFooter}>
         <Typography component='p' variant='body2' align='center'>
           <a
-            href='https://trutoro.io'
+            href='#'
             className={classes.copyrightText}
             rel='noreferrer'
             target='_blank'>
             Made with&nbsp;
             <Favorite fontSize='small' />
-            &nbsp;by&nbsp;Trutoro
+            &nbsp;by&nbsp;Sudhakar George
           </a>
         </Typography>
       </Toolbar>
@@ -230,7 +235,7 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
             <MenuIcon />
           </IconButton>
           <Typography variant='h6' noWrap className={classes.appBarTitle}>
-            Responsive Sidebar <strong>Starter Layout</strong>
+           UIUX <strong>Dashboard</strong>
           </Typography>
           <Switch
             checked={themeConfig.state}
@@ -241,7 +246,7 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
             color='inherit'
             onClick={() =>
               window.open(
-                "https://github.com/trutoro/react-material-sidebar-starter",
+                "https://github.com/sgeorge1979/",
                 "_blank"
               )
             }>

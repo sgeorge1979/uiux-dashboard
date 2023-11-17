@@ -14,3 +14,589 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* dark shades of primary color*/
+  --clr-primary-1: hsl(205, 86%, 17%);
+  --clr-primary-2: hsl(205, 77%, 27%);
+  --clr-primary-3: hsl(205, 72%, 37%);
+  --clr-primary-4: hsl(205, 63%, 48%);
+  /* primary/main color */
+  --clr-primary-5: hsl(205, 78%, 60%);
+  /* lighter shades of primary color */
+  --clr-primary-6: hsl(205, 89%, 70%);
+  --clr-primary-7: hsl(205, 90%, 76%);
+  --clr-primary-8: hsl(205, 86%, 81%);
+  --clr-primary-9: hsl(205, 90%, 88%);
+  --clr-primary-10: hsl(205, 100%, 96%);
+  /* darkest grey - used for headings */
+  --clr-grey-1: hsl(209, 61%, 16%);
+  --clr-grey-2: hsl(211, 39%, 23%);
+  --clr-grey-3: hsl(209, 34%, 30%);
+  --clr-grey-4: hsl(209, 28%, 39%);
+  /* grey used for paragraphs */
+  --clr-grey-5: hsl(210, 22%, 49%);
+  --clr-grey-6: hsl(209, 23%, 60%);
+  --clr-grey-7: hsl(211, 27%, 70%);
+  --clr-grey-8: hsl(210, 31%, 80%);
+  --clr-grey-9: hsl(212, 33%, 89%);
+  --clr-grey-10: hsl(210, 36%, 96%);
+  --clr-white: #fff;
+  --clr-red-dark: hsl(360, 67%, 44%);
+  --clr-red-light: hsl(360, 71%, 66%);
+  --clr-green-dark: hsl(125, 67%, 44%);
+  --clr-green-light: hsl(125, 71%, 66%);
+  --clr-black: #222;
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  --max-width: 1170px;
+  --fixed-width: 450px;
+  --clr-orange-1: hsl(12, 83%, 98%);
+  --clr-orange-2: hsl(14, 91%, 95%);
+  --clr-orange-3: hsl(12, 89%, 89%);
+  --clr-orange-4: hsl(13, 87%, 82%);
+  --clr-orange-5: hsl(13, 88%, 68%);
+  --clr-orange-6: hsl(13, 88%, 55%);
+  --clr-orange-7: hsl(13, 74%, 49%);
+  --clr-orange-8: hsl(13, 74%, 33%);
+  --clr-orange-9: hsl(13, 73%, 25%);
+  --clr-orange-10: hsl(13, 73%, 16%);
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section,
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+@media screen and (min-width: 992px) {
+  .section {
+    width: 95vw;
+  }
+}
+
+.container {
+  text-align: center;
+  margin-top: 5rem;
+  margin-left: 10px;
+}
+.btn {
+  display: inline-block;
+  background: var(--clr-primary-5);
+  color: var(--clr-white);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius);
+  border-color: transparent;
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: var(--spacing);
+  margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.btn:hover {
+  background: var(--clr-primary-1);
+  color: var(--clr-primary-5);
+}
+.item {
+  background: var(--clr-white);
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--fixed-width);
+  margin: 2rem auto;
+  align-items: center;
+  border-radius: var(--radius);
+}
+.item button,
+.item a {
+  background: transparent;
+  border-color: transparent;
+  color: var(--clr-primary-5);
+  letter-spacing: var(--spacing);
+  cursor: pointer;
+}
+.item {
+  padding: 1rem 2rem;
+}
+.item h4 {
+  margin-bottom: 0;
+}
+.item p {
+  margin-bottom: 0;
+}
+.modal {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-white);
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+}
+
+.modal p {
+  margin-bottom: 0;
+  color: var(--clr-red-dark);
+}
+.form {
+  background: var(--clr-white);
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+}
+.form input {
+  background: var(--clr-grey-10);
+  border-color: transparent;
+  border-radius: var(--radius);
+  padding: 0.25rem 0.5rem;
+}
+.form-control {
+  margin: 0.5rem 0;
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  align-items: center;
+}
+.form button {
+  display: inline-block;
+  background: var(--clr-black);
+  color: var(--clr-white);
+  border-color: transparent;
+  margin-top: 1rem;
+  letter-spacing: var(--spacing);
+  padding: 0.15rem 0.25rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.nav-links {
+  max-width: var(--fixed-width);
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.nav-links a {
+  color: var(--clr-grey-5);
+}
+.users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto;
+}
+.users li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: var(--clr-white);
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  text-align: left;
+}
+.users img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.users h4 {
+  margin-bottom: 0.15rem;
+}
+.users a {
+  color: var(--clr-grey-5);
+  text-transform: capitalize;
+}
+
+.products {
+  margin: 4rem 0;
+  display: grid;
+  gap: 2rem;
+}
+@media screen and (min-width: 576px) {
+  .products {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+.product {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+}
+.product img {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+.product h4 {
+  margin-top: 1rem;
+}
+
+.product button {
+  margin-bottom: 1rem;
+  background: var(--clr-primary-5);
+  border-radius: var(--radius);
+  border-color: transparent;
+  color: var(--clr-white);
+  padding: 0.25rem 0.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.Resizer {
+  background: #000;
+  opacity: 0.2;
+  z-index: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+  background-clip: padding-box;
+}
+
+.Resizer:hover {
+  -webkit-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+.Resizer.horizontal {
+  height: 11px;
+  margin: -5px 0;
+  border-top: 5px solid rgba(255, 255, 255, 0);
+  border-bottom: 5px solid rgba(255, 255, 255, 0);
+  cursor: row-resize;
+  width: 100%;
+}
+
+.Resizer.horizontal:hover {
+  border-top: 5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.5);
+}
+
+.Resizer.vertical {
+  width: 11px;
+  margin: 0 -5px;
+  border-left: 5px solid rgba(255, 255, 255, 0);
+  border-right: 5px solid rgba(255, 255, 255, 0);
+  cursor: col-resize;
+}
+
+.Resizer.vertical:hover {
+  border-left: 5px solid rgba(0, 0, 0, 0.5);
+  border-right: 5px solid rgba(0, 0, 0, 0.5);
+}
+.Resizer.disabled {
+  cursor: not-allowed;
+}
+.Resizer.disabled:hover {
+  border-color: transparent;
+}
+
+body {margin:0;}
+/* The navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;  /* Full width */
+}
+/* Links inside the navbar */
+a {
+	color:#ffffff;
+}
+a:hover {
+  color: hsl(205, 89%, 70%);
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #ffff80;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+/* Main content */
+.main {
+  padding: 16px;
+  margin-top: 30px; /* Add a top margin to avoid content overlay */
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.splitContiner {
+    top: 130px !important;
+    width: 85% !important;
+    margin-left: 200px !important;
+    border-radius: 12px;
+}
+.clipboard { margin-top: -85px;
+margin-left: 415px;
+}
+.htmlBtn {
+	margin-left: -185px!important;
+	margin-top: -1380px;
+}
+
+#myHtmlbutton {
+  position: fixed;
+  bottom: -4px;
+  left: 400px;
+  
+}
+#myJsbutton {
+  position: fixed;
+  bottom: -4px;
+  right: 60px;
+}
+
+.fixed-nav-bar {
+  position: fixed;
+  align-items: flex-end;
+  justify-content: flex-end;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  box-shadow: 0px 0px 10px gray;
+  display: flex;
+  line-height: 50px;
+}
+
+nav .brand {
+  flex: 1;
+  color:white;
+  margin-left: -1300px;
+  
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: -10px;
+  width: 12%;
+  height: 100%;
+  margin-left: 20px;
+  overflow-y: auto;
+  background: #000;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px grey;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 160px;
+  margin: 0;
+  padding: 0;
+  margin-left:-20px;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 10px;
+  line-height: 35px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none;
+  color: #ffffff!important;
+}
+
+.activeRoute {
+  color: #ffffff!important;
+   text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);
+   background-color: #0088cc;
+   cursor: not-allowed;
+}
+
+.homeActive{
+   color: #ffffff!important;
+   text-shadow: 0 -1px 0 rgb(0 0 0 / 20%);	
+ cursor: not-allowed;	
+}
+
+
+.sidebar-nav>.sidebar-brand {
+    height: 105px;
+    font-size: 18px;
+    line-height: 160px;
+
+}
+
+.sidebar-nav li .submenu{ 
+	list-style: none; 
+	margin: 0; 
+	padding: 0; 
+	padding-left: 1rem; 
+	padding-right: 0rem;
+}
+
+.sidebar-nav>.sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav>.sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+
+
+.hrline{
+	color:white!important;
+}
+
+.TopBar {
+  display: block; /* Blocks have 100% widht by default, don't need to specify */
+  padding: 10px;
+  position: static; /* No need to specify, it's the default value */
+  /* Helpers to make the TopBar easier to track */
+  background-color: #f1f1f1;
+  /* This is not part of the solution, it's only to make the height inversely proportional to window width
+     e.g. make it grow while the other decrease 
+  */
+  box-shadow: 0px 0px 10px gray;
+  height: calc(200px - 8vw);
+  margin-top: 50px;
+  width: 150%;
+  width: 134.5%;
+}
+
+.container {
+  width: 100vw; 
+}
+
+textarea {
+	opacity: 0.1;
+}
+
+.splitContiner {
+  top: 130px !important;
+  width: 85% !important;
+  margin-left: 0px !important;
+  border-radius: 12px;
+  }
+
