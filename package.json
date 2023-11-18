@@ -23,12 +23,13 @@
     "react-ace": "^10.1.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^17.0.2",
+    "react-native": "^0.72.6",
     "react-router-dom": "^5.2.0",
     "react-split-pane": "^0.1.92"
   },
   "scripts": {
     "start": "react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
+    "build": "react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,6 +52,6 @@
     ]
   },
   "devDependencies": {
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^3.0.1"
   }
 }
