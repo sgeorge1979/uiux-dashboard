@@ -31,7 +31,7 @@ const LiveEditor = () => {
                 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
 				        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
                </head>
-               <style>                       
+               <style>
                 ${debouncedCss}
                </style>
                <body>
@@ -39,7 +39,7 @@ const LiveEditor = () => {
                  <br>
                  <span class="badge rounded-pill bg-dark">Editor Preview :</span> <br> <br>
                   ${debouncedHtml}
-                </div> 
+                </div>
                 <script type="text/javascript">
                   ${debouncedJs}
                </script>
@@ -60,7 +60,7 @@ const LiveEditor = () => {
           flexDirection='column'
           alignItems='center'
           justifyContent='center'>
-    
+
       <SplitPane
         marginLeft="100px"
         split="horizontal"
@@ -93,9 +93,9 @@ const LiveEditor = () => {
       </SplitPane>
 
      </Box>
-   
+
     </PageBody>
-  </React.Fragment> 
+  </React.Fragment>
   );
 };
 
