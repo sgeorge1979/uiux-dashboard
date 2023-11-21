@@ -1,5 +1,4 @@
 import { lazy } from "react";
-
 function importView(...args) {
   const path = args
     .map((arg) => {
@@ -9,6 +8,7 @@ function importView(...args) {
           .map(() => arg[0])
           .join("/");
         arg = nestPath;
+        console.log("arg"+arg);
       }
       return arg;
     })
@@ -44,7 +44,13 @@ export const mainRoutes = [
     ],
   },
   {
-    path: `/users`,
-    component: lazy(() => importView(["Users", 2])),
+    path: `/layout`,
+    component: lazy(() => importView("Layout", "TableWithRightInfo")),
+    routes: [
+    {
+      path: `/layout/tablewithRtInfo`,
+      component: lazy(() => importView("Layout", "TableWithRightInfo")),
+    },
+   ],
   },
 ];

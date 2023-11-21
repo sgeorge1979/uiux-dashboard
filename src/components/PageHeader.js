@@ -19,6 +19,7 @@ import {
 import DataTableFilters from '../DownloadFiles/dataTable-Filters.txt';
 import DownloadExcel from '../DownloadFiles/download_excel.txt';
 import DownloadCsv from '../DownloadFiles/download_csv.txt';
+import TableWithRightInfo from '../DownloadFiles/tableWithRightInfo.txt';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
@@ -44,7 +45,7 @@ const PageHeader = ({ title, children, style, toolText, download}) => {
           style={{ ...style }}
         >
           <Grid container spacing={3}>
-          <Grid item xs="auto"> 
+          <Grid item xs="auto">
           {title && (
             <Typography variant="h6" noWrap className={classes.headerTitle}>
               {title}
@@ -61,13 +62,13 @@ const PageHeader = ({ title, children, style, toolText, download}) => {
             >
               <InfoIcon />
             </Tooltip>
-          
+
           )}
          </Grid>
          <Grid item xs={4}>
          {download == 'dataTable_filters' && (
           <Button variant="contained" startIcon={<CloudDownloadIcon />}>
-           <a href={DataTableFilters} 
+           <a href={DataTableFilters}
            download={download+'.html'}
            target="_blank"
            rel="noreferrer"
@@ -77,7 +78,7 @@ const PageHeader = ({ title, children, style, toolText, download}) => {
         )}
         {download == 'download_excel' && (
           <Button variant="contained" startIcon={<CloudDownloadIcon />}>
-           <a href={DownloadExcel} 
+           <a href={DownloadExcel}
            download={download+'.html'}
            target="_blank"
            rel="noreferrer"
@@ -87,7 +88,17 @@ const PageHeader = ({ title, children, style, toolText, download}) => {
         )}
         {download == 'download_csv' && (
           <Button variant="contained" startIcon={<CloudDownloadIcon />}>
-           <a href={DownloadCsv} 
+           <a href={DownloadCsv}
+           download={download+'.html'}
+           target="_blank"
+           rel="noreferrer"
+           style={{color:"black", paddingRight:"10px"}}
+           >Download Source Code</a>
+          </Button>
+        )}
+       {download == 'tableWithRightInfo' && (
+          <Button variant="contained" startIcon={<CloudDownloadIcon />}>
+           <a href={TableWithRightInfo}
            download={download+'.html'}
            target="_blank"
            rel="noreferrer"

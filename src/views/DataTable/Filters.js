@@ -364,7 +364,7 @@ const [cssFilter] = React.useState(`
 
  <!-- DataTable Data -->
   <table id="example" class="table table-condensed table-striped table-bordered display"  cellspacing="0" width="100%">
-     <thead >
+     <thead class="header">
         <tr>
            <th id="name">Name</th>
            <th id="position">Position</th>

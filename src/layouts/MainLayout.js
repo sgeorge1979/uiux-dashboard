@@ -151,7 +151,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     textDecoration: "none",
-    color: "inherit",
+    color: "#FFF",
   },
 }));
 
@@ -180,8 +180,7 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
   const drawer = (
     <Fragment>
       <div className={classes.toolbarIcon}>
-      <Avatar alt="Sudhakar George" src="../static/dev.jpg" /> 
-      <Avatar alt="Remy Sharp" src={avatarIcon} id="avatar" className={classes.avatar}  />
+      <Avatar alt="Sudhakar George" src={avatarIcon} id="avatar" className={classes.avatar}  />
        <h8>Sudhakar George</h8>
         <IconButton
           onClick={handleExtendClose}
@@ -246,7 +245,7 @@ const MainLayout = ({ themeConfig, navigationData, children }) => {
             color='inherit'
             onClick={() =>
               window.open(
-                "https://github.com/sgeorge1979/",
+                "https://github.com/sgeorge1979/uiux-dashboard/",
                 "_blank"
               )
             }>

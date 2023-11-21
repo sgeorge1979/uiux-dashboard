@@ -2,9 +2,10 @@ import {
   Home,
   Tune,
   BorderColor,
-  PeopleAlt,
+  VerticalSplit,
   MenuBook,
   ImportContacts,
+  ViewQuilt,
   PostAdd,
 } from "@material-ui/icons";
 
@@ -42,8 +43,15 @@ export const mainNavigation = [
     ],
   },
   {
-    name: "Users",
-    icon: PeopleAlt,
-    url: `/users`,
+    name: "Layout",
+    icon: ViewQuilt,
+    url: `/layout`,
+    navigationData: [
+      {
+        name: "TablewithRtInfo",
+        icon: VerticalSplit,
+        url: `/layout/tablewithRtInfo`,
+      },
+    ] 
   },
 ];
